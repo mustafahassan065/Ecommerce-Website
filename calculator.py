@@ -37,8 +37,8 @@ login_manager.login_view = 'login'
 oauth = OAuth(app)
 google = oauth.register(
     name='google',
-    client_id="10478989205-tusa8f2mcetfuloba7eep5amrptus848.apps.googleusercontent.com",  
-    client_secret="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",  
+    client_id="",  
+    client_secret="",  
     access_token_url="https://oauth2.googleapis.com/token",
     access_token_params=None,
     authorize_url="https://accounts.google.com/o/oauth2/auth",
@@ -212,7 +212,7 @@ def decrease_quantity(product_id):
 def process_payment():
    return render_template('payment.html')
 
-stripe.api_key = 'sk_test_51POV5pLkVrTHamybbDAtKugqOURr8m8YO8helQXttYvHMUw5zwIkZ2uWemYCtj1lT8Pqsnnk47DIX2rgWGNffYVo00Wqa9K09c'
+stripe.api_key = ''
 
 @app.route('/pay', methods=['POST'])
 def pay():
