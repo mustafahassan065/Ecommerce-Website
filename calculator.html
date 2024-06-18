@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.1.4/swiper-bundle.min.css">
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+}
+.headerbox{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+    height: 60px;
+    
+}
+.box1{
+    margin: auto;
+    color: #333;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 8px;
+    
+}
+.box2{
+    background-color: lavender;
+    color: red;
+    width: 30%;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border-style: groove;
+    border-top: none;
+    border-left: none;
+    box-sizing: border-box;
+}
+
+ #search:hover  #ul{
+    display: block;
+     
+} 
+.dropdown:hover + #ul{
+    display: block;
+}
+
+.icon{
+    background-image: url( search4.webp);
+    height: 28px;
+    width: 28px;
+    
+    background-size: contain;
+    position: absolute;
+    left: 54.8%;
+    top: 2.3%;
+}
+.box3 a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+.box3 a:hover{
+    text-decoration: underline;
+}
+.box4 a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+.box4 a:hover{
+    text-decoration: underline;
+}
+.box3icon{
+    width: 20px;
+    height: 20px;
+    background-image: url(/static/signinicon.png);
+    background-size: cover;
+    margin-right: 5px;
+}
+.box4icon{
+    width: 20px;
+    height: 25px;
+    background-image: url(/static/shopping\ cart.png);
+    background-size: cover;
+    margin-right: 5px;
+}
+.box3text{
+    font-size: 12px;
+}
+.box3details{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 30%;
+    margin-right: 90px;
+}
+.container2{
+     background-image: url('/static/fashion3.jpg');
+    background-position: 0 10%;
+    background-size: cover;
+    width: 100%;
+    max-height: 700px;
+    background-color: red;
+}
+#ul{
+    position: absolute;
+    height: 300px;
+    width: 150px;
+    display: none;
+    left: 19.5%;
+    top: 3%;
+}
+#list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.animals {
+    font-size: 1.2em;
+    animation: fadeIn 0.5s ease-in-out;
+    width: 120px;
+    background-color: #ddd;
+    list-style: none;
+   margin-right: 90px; 
+   text-align: center;
+   border-style: solid;
+   border-color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#ul ul{
+    display: flex;
+    flex-direction: column;
+    margin-top: 75px;
+    margin-right: -10px;
+     
+}
+#ul a{
+    color: black;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-weight: lighter;
+   text-decoration: none;
+}
+.secondheader{
+    background-color: lavender;
+    height: 40px;
+    width: 100%;
+}
+.secondheader ul{
+    margin: auto;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+    width: 30%;
+    margin-left: 140px;
+}
+.secondheader ul li{
+    list-style: none; 
+}
+.secondheader ul li a{
+    color: white;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.secondheader ul li a:hover{
+    color: black; 
+}
+.frontpage{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+     margin-top: 10rem;
+     margin-left: -50rem;
+}
+.frontpagedetails{
+    margin-left: 160px;
+    
+}
+.frontpage h1{
+    color: orange;
+}
+.frontpagebuttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+}
+ .button{
+    height: 50px;
+    width: 200px;
+    border: 1px solid white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 10px;
+    border-radius: 30px;
+}
+.button a{
+    text-decoration: none;
+    color: white;
+}
+.button:hover{
+    background-color: rgb(49, 49, 58);
+    
+}
+#search img{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 9.2%;
+}
+.card-image{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    
+}
+.card-image .card-img{
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+}
+.container3{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   background-image: url(/static/p15.webp);
+   background-size: cover;
+    margin-top: 310px;
+}
+.card{
+    border-radius: 25px;
+    background-color: #fff;
+}
+.slide-content{
+    margin: 0 40px;
+    overflow: hidden;
+    border-radius: 25px;
+}
+.image-content,
+.card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+}
+.image-content{
+  row-gap: 5px;
+    position: relative;
+    padding: 25px 0;
+}
+.overlay::before,
+.overlay::after{
+    content: '';
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    right: 0;
+    bottom: -40px;
+    background-color: white;
+}
+.overlay::after{
+    border-radius: 0 0 25px 0;
+    background-color:  #fff;
+
+}
+.overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+     border-radius: 25px 25px 0 0; 
+}
+.slider-container{
+    max-width: 1120px;
+    width: 100%;
+    background-color: grey;
+    padding: 40px 0;
+}
+.swiper-navBtn{
+    color: #6e93f7;
+
+
+}
+.swiper-navBtn:hover{
+    color: #4070f4;  
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after{
+    font-size: 40px;
+}
+.swiper-button-next{
+    right: 0;
+}
+.swiper-button-prev{
+    left: 0;
+}
+.swiper-pagination-bullet{
+    background-color: #6e93f7;
+}
+.swiper-pagination-bullet-active{
+    background-color: #4070f4;
+}
+.container4{
+    width: 100%;
+    max-height: 400px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: lavender;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container4 .icons img{
+    width: 25px;
+    height: 25px;
+    border-radius: 10px;
+    margin: 0 5px;
+    margin-bottom: 100px;
+    margin-top: 10px;
+    opacity: 20%;
+}
+.container4 .icons img:hover{
+    opacity: 100%;
+}
+.container4 .address,
+.container4 .list{
+    text-align: center;
+    
+}
+.list li{
+    list-style: none;
+    margin: 25px;
+}
+.container4 a{
+    text-decoration: none;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.footer{
+    width: 100%;
+    height: 60px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(25, 25, 54);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+.card-content{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.description , .cross{
+    margin-right: 200px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.cross{
+    color: red;
+    text-decoration: line-through;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+ form button{
+    width: 130px;
+    background-color: orange;
+    height: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: none;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+form button:hover{
+    background-color: rgb(25, 25, 54);
+}
+.container3 h1{
+    color: rgb(25, 25, 54) ;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin-bottom: 10px;
+}
+/*responsive*/
+@media screen and (max-width: 768px) {
+    .swiper-navBtn{
+        display: none;
+    }
+    .slide-content{
+        margin: 0 10px;
+    }
+}
+</style>
+<body>
+    <header>
+        <div class="headerbox">
+        <div class="box1">
+            <h1>MH STORE</h1>
+        </div>
+        <div class="box2">
+            <p>20% off till 29 june 2024!</p>
+        </div>
+<div class="box3details">
+            <div class="box3">
+                <a href="{{ url_for('login')}}" type="button">
+                 <div class="box3icon"> </div>
+                 <div class="box3text">Sign in or Create account</div>
+                 </a>
+            </div>
+            <div class="box4">
+                <a href="{{ url_for('shopping_cart')}}" type="button">
+                    <div class="box4icon" ></div>
+                    <div class="box3text">Shopping cart</div>
+                    </a>
+            </div>
+            </div>
+         </header>
+            <div class="container2">
+               <div class="secondheader">
+                <ul>
+                  <li><a href="{{url_for('men')}}" type="button"  >Men</a></li>
+                  <li><a href="{{url_for('women')}}" type="button">Women</a></li>
+                  <li> <label id="search"><a class="dropdown" href="#" type="button">Overall items</a>
+                    <img src="{{ url_for('static', filename='dropdown2.png') }} ">
+                    <div id="ul">
+                        <ul>
+                           <a href="#" type="button"> <li class="animals">Shoes</li></a>
+                           <a href="#" type="button"><li class="animals">Dresses</li></a>
+                           <a href="#" type="button" ><li class="animals">Men Collection</li></a>
+                            <a href="#" type="button"><li class="animals">Women Collection</li></a>
+                            <a href="#" type="button"><li class="animals">Men sales</li></a>  
+                        </ul>
+                        </div>
+                        </label>
+                </li>
+                  <li><a href="#" type="button">About us</a></li>
+                </ul>
+               </div>
+               <div class="frontpage">
+        
+            <div class="frontpagehader">
+              <h1>All-OVER COLLECTION</h1>
+            </div>
+            <div class="frontpagedetails">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.Reiciendis <br> nostrum ad, nam quae dolores laborum quibusdam
+               libero expedita <br>tenetur numquam eveniet culpa aspernatur quo provident ipsa  eum,<br> iure, odio ea!
+            </div>
+            <div class="frontpagebuttons">
+           <div class="button">   <a type="button"  href="{{ url_for('men')}}" >DISCOVER</a> </div>
+           <div class="button">  <a type="button"  href="{{ url_for('shopping_cart')}}">ADD TO CART</a> </div>
+            </div>   
+                </div>
+<div class="container3">
+    
+<div class="slide-container swiper">
+    
+    <h1>NEW ARRIVALS</h1>
+ <div class="slide-content">
+    <div class="card-wrapper swiper-wrapper">
+        <div class="card swiper-slide">
+            <div class="image-content">
+                <span class="overlay"></span>
+                <div class="card-image">
+                    <img src="{{ url_for('static', filename='p1.jpeg') }} " class=" card-img">
+                </div>
+            </div>
+            <div class="card-content">
+                <h2 class="name">White design shirt</h2>
+                <p class="cross">13$</p>
+                <p class="description">10$</p>
+                <form action="{{ url_for('add_to_cart') }}" method="post">
+                    <input type="hidden" name="product_name" value="White design shirt">
+                    <input type="hidden" name="product_price" value="10">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+        <div class="card swiper-slide">
+            <div class="image-content">
+                <span class="overlay"></span>
+                <div class="card-image">
+                    <img src="{{ url_for('static', filename='p4.jpg') }} " class=" card-img">
+                </div>
+            </div>
+            <div class="card-content">
+                <h2 class="name">Yellow design shirt</h2>
+                <p class="cross">13$</p>
+                <p class="description">10$</p>
+                <form action="{{ url_for('add_to_cart') }}" method="post">
+                    <input type="hidden" name="product_name" value="Yellow design shirt">
+                    <input type="hidden" name="product_price" value="10">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+        <div class="card swiper-slide">
+            <div class="image-content">
+                <span class="overlay"></span>
+                <div class="card-image">
+                    <img src="{{ url_for('static', filename='p5.jpg') }} " class=" card-img">
+                </div>
+            </div>
+            <div class="card-content">
+                <h2 class="name">Black shirt</h2>
+                <p class="cross">13$</p>
+                <p class="description">10$</p>
+                <form action="{{ url_for('add_to_cart') }}" method="post">
+                    <input type="hidden" name="product_name" value="Black shirt">
+                    <input type="hidden" name="product_price" value="10">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+        <div class="card swiper-slide">
+            <div class="image-content">
+                <span class="overlay"></span>
+                <div class="card-image">
+                    <img src="{{ url_for('static', filename='p6.jpg') }} " class=" card-img">
+                </div>
+            </div>
+            <div class="card-content">
+                <h2 class="name">Black pent</h2>
+                <p class="cross">20$</p>
+                <p class="description">15$</p>
+                <form action="{{ url_for('add_to_cart') }}" method="post">
+                    <input type="hidden" name="product_name" value="Black pent">
+                    <input type="hidden" name="product_price" value="15">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+        <div class="card swiper-slide">
+            <div class="image-content">
+                <span class="overlay"></span>
+                <div class="card-image">
+                    <img src="{{ url_for('static', filename='p7.avif') }} " class=" card-img">
+                </div>
+            </div>
+            <div class="card-content">
+                <h2 class="name">Skin pent</h2>
+                <p class="cross">20$</p>
+                <p class="description">15$</p>
+                <form action="{{ url_for('add_to_cart') }}" method="post">
+                    <input type="hidden" name="product_name" value="Skin pent">
+                    <input type="hidden" name="product_price" value="15">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+        <div class="card swiper-slide">
+            <div class="image-content">
+                <span class="overlay"></span>
+                <div class="card-image">
+                    <img src="{{ url_for('static', filename='p8.jpg') }} " class=" card-img">
+                </div>
+            </div>
+            <div class="card-content">
+                <h2 class="name">White pent</h2>
+                <p class="cross">20$</p>
+                <p class="description">15$</p>
+                <form action="{{ url_for('add_to_cart') }}" method="post">
+                    <input type="hidden" name="product_name" value="White pent">
+                    <input type="hidden" name="product_price" value="15">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+        <div class="card swiper-slide">
+            <div class="image-content">
+                <span class="overlay"></span>
+                <div class="card-image">
+                    <img src="{{ url_for('static', filename='p9.jpg') }} " class=" card-img">
+                </div>
+            </div>
+            <div class="card-content">
+                <h2 class="name">New model watch</h2>
+                <p class="cross">50$</p>
+                <p class="description">40$</p>
+                <form action="{{ url_for('add_to_cart') }}" method="post">
+                    <input type="hidden" name="product_name" value="New model watch">
+                    <input type="hidden" name="product_price" value="40$">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+        <div class="card swiper-slide">
+            <div class="image-content">
+                <span class="overlay"></span>
+                <div class="card-image">
+                    <img src="{{ url_for('static', filename='p10.avif') }} " class=" card-img">
+                </div>
+            </div>
+            <div class="card-content">
+                <h2 class="name">Epson watch</h2>
+                <p class="cross">50$</p>
+                <p class="description">40$</p>
+                <form action="{{ url_for('add_to_cart') }}" method="post">
+                    <input type="hidden" name="product_name" value="Epson watch">
+                    <input type="hidden" name="product_price" value="40">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+        <div class="card swiper-slide">
+            <div class="image-content">
+                <span class="overlay"></span>
+                <div class="card-image">
+                    <img src="{{ url_for('static', filename='p11.avif') }} " class=" card-img">
+                </div>
+            </div>
+            <div class="card-content">
+                <h2 class="name">White shoes</h2>
+                <p class="cross">60$</p>
+                <p class="description">50$$</p>
+                <form action="{{ url_for('add_to_cart') }}" method="post">
+                    <input type="hidden" name="product_name" value="White shoes">
+                    <input type="hidden" name="product_price" value="50">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+        <div class="card swiper-slide">
+            <div class="image-content">
+                <span class="overlay"></span>
+                <div class="card-image">
+                    <img src="{{ url_for('static', filename='p12.jpg') }} " class=" card-img">
+                </div>
+            </div>
+            <div class="card-content">
+                <h2 class="name">Adidas shoes</h2>
+                <p class="cross">60$</p>
+                <p class="description">50$</p>
+                <form action="{{ url_for('add_to_cart') }}" method="post">
+                    <input type="hidden" name="product_name" value="Adidas shoes">
+                    <input type="hidden" name="product_price" value="50">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+    </div>
+ </div>
+ <div class="swiper-button-next swiper-navBtn"></div>
+ <div class="swiper-button-prev swiper-navBtn"></div>
+ <div class="swiper-pagination "></div>
+</div>
+</div>
+
+<div class="container4">
+    <div class="list">
+        <ul>
+           <li><h3>Useful links</h3></li>
+         <li><a href=""> Rent Collection </a></li>
+          <li><a href="">Accounting</a></li>
+  <li><a href="">Agreements</a></li>
+  <li><a href="">  Rental Application</a></li>
+ 
+        </ul>
+     </div>
+     <div class="list">
+        <ul>
+           <li><h3>Useful links</h3></li>
+         <li><a href=""> Rent Collection </a></li>
+          <li><a href="">Accounting</a></li>
+  <li><a href="">Agreements</a></li>
+  <li><a href="">  Rental Application</a></li>
+ 
+        </ul>
+     </div>
+     <div class="list">
+     <div class="address">
+        <h3>Address</h3>
+ <p>Narwala chowk FSD <br>
+    near to GCUF</p>
+     </div>
+     <div class="icons">
+        <a href="" type="button" class="button5">  <img src="{{ url_for('static', filename='facebook.png') }}"></a> 
+                 <a href="https://www.instagram.com/mustafahassan065?igsh=YWZyMHVoaHg5dXhx" type="button" class="button5"><img src="{{ url_for('static', filename='instagram_icon.png.webp') }}  "></a>
+                <a href="https://www.linkedin.com/in/mustafa-hassan-78b0262b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" type="button" class="button5">  <img src="{{ url_for('static', filename='linkedin.png') }}  "></a>
+                    <a href="https://github.com/mustafahassan065" type="button" class="button5"> <img src="{{ url_for('static', filename='git.png') }}  "></a>
+     </div>
+     </div>
+</div>
+<div class="footer">
+    <p>Copyright MH store.All Rights Reserved</p>
+    <p>Designed by:Mustafa hassan</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11.1.4/swiper-bundle.min.js"></script>
+<script>
+        var swiper = new Swiper(".slide-content", {
+          slidesPerView: 3,
+          spaceBetween: 25,
+          loop: true,
+          centerSlide :'true',
+          fade: 'true',
+          gragCursor: 'true',
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets:true
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          breakpoints:{
+            0:{
+                slidesPerView : 1
+            },
+            520:{
+                slidesPerView : 2
+            },
+            950:{
+                slidesPerView : 3
+            },
+          },
+        });
+      </script>
+
+</body>
+</html>
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  form {
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input[type="number"], input[type="text"] {
+    width: 290px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: orange;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  button[type="submit"]:hover {
+    background-color: rgb(25,25,54);
+  }
+</style>
+<body>
+  <form action="/pay" method="post">
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" name="amount" value="{{ grand_total }}">
+    <label for="card_number">Card Number:</label>
+    <input type="text" id="card_number" name="card_number" required>
+    <label for="exp_month">Expiration Month:</label>
+    <input type="text" id="exp_month" name="exp_month" required>
+    <label for="exp_year">Expiration Year:</label>
+    <input type="text" id="exp_year" name="exp_year" required>
+    <label for="cvc">CVC:</label>
+    <input type="text" id="cvc" name="cvc" required>
+    <button type="submit">Pay</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+</head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+.login-container h2 {
+    margin-bottom: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.google-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: orange;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 5px;
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.google-btn a{
+    color: white;
+
+}
+ a img{
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    
+}
+</style>
+<body>
+    <div class="login-container">
+        <h2>Sign in with</h2>
+        <a href="{{ url_for('login_with_google') }}" class="google-btn"><img src="{{ url_for('static', filename='google.png') }} " > Google</a>
+    </div>
+</body>
+</html>
+

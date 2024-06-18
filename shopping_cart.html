@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    h1 {
+        color: #333;
+        margin: 20px 0;
+    }
+    table {
+        width: 80%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+    th, td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+    a {
+        text-decoration: none;
+        color: #007bff;
+        margin: 0 5px;
+    }
+    p {
+        color: #555;
+        margin: 20px 0;
+    }
+    .total-row {
+        font-weight: bold;
+    }
+    .process-payment-link {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 20px 0;
+        background-color: #28a745;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+    .process-payment-link:hover {
+        background-color: #218838;
+    }
+    .btn a{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-decoration: none;
+        font-size: 18px;    
+    }
+    .btn{
+        width:160px;
+        height: 30px;
+        background-color: orange;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+    .btn:hover{
+        background-color: rgb(25,25,54);
+        text-decoration: none;
+    }
+</style>
+<body>
+    <h1>Your Shopping Cart</h1>
+    <table>
+        <tr>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+        {% for item in cart_items %}
+        <tr>
+            <td>{{ item['product_name'] }}</td>
+            <td>{{ item['product_price'] }}</td>
+            <td>
+                {{ item['quantity'] if item['quantity'] else 0 }} 
+                <a href="{{ url_for('increase_quantity', product_id=item.id) }}">+</a>
+                <a href="{{ url_for('decrease_quantity', product_id=item.id) }}">-</a>
+                <a href="{{ url_for('delete_from_cart', product_id=item.id) }}">Delete</a>
+            </td>
+            <td>{{ item['product_price'] * (item['quantity'] if item['quantity'] else 0) }}</td> 
+            
+        </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="3">Total:</td>
+            <td>{{ total }}$</td>  
+        </tr>
+        <tr>
+            <td colspan="3">Shipping Charges:</td>
+            <td>{{ shipping_charges }}$</td>  
+        </tr>
+        <tr>
+            <td colspan="3">Tax:</td>
+            <td>{{ tax }}$</td>  
+        </tr>
+        <tr>
+            <td colspan="3">Grand Total:</td>
+            <td>{{ grand_total }}$</td>  
+        </tr>
+    </table>
+    <div class="b">
+    <a  href="{{ url_for('process_payment')}}"><div class="btn">Process Payment </div></a>
+    <a  href="{{ url_for('index')}}"><div class="btn">Back to Page </div></a>
+    </div>
+
+</body>
+</html>

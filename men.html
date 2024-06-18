@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Filter And Search</title>
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      border: none;
+      outline: none;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      background-color: #f5f8ff;
+    }
+    .headerbox{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      width: 100%;
+      height: 60px;
+      
+  }
+  .box1{
+      margin: auto;
+      color: #333;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      letter-spacing: 8px;
+      
+  }
+  .box2{
+      background-color: lavender;
+      color: red;
+      width: 30%;
+      height: 40px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      border-style: groove;
+      border-top: none;
+      border-left: none;
+      box-sizing: border-box;
+  }
+  
+   #search:hover  #ul{
+      display: block;
+       
+  } 
+  .dropdown:hover + #ul{
+      display: block;
+  }
+  
+  .icon{
+      background-image: url( search4.webp);
+      height: 28px;
+      width: 28px;
+      
+      background-size: contain;
+      position: absolute;
+      left: 54.8%;
+      top: 2.3%;
+  }
+  .box3 a{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: black;
+  }
+  .box3 a:hover{
+      text-decoration: underline;
+  }
+  .box4 a{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: black;
+  }
+  .box4 a:hover{
+      text-decoration: underline;
+  }
+  .box3icon{
+      width: 20px;
+      height: 20px;
+      background-image: url(/static/signinicon.png);
+      background-size: cover;
+      margin-right: 5px;
+  }
+  .box4icon{
+      width: 20px;
+      height: 25px;
+      background-image: url(/static/shopping\ cart.png);
+      background-size: cover;
+      margin-right: 5px;
+  }
+  .box3text{
+      font-size: 12px;
+  }
+  .box3details{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 30%;
+      margin-right: 90px;
+  }
+  .container2{
+      width: 100%;
+      max-height: 700px;
+  }
+  #ul img{
+    width: 5px;
+  }
+  #ul{
+      position: absolute;
+      height: 300px;
+      width: 150px;
+      display: none;
+      left: 19.5%;
+      top: 3%;
+  }
+  #list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+  .animals {
+      font-size: 1.2em;
+      animation: fadeIn 0.5s ease-in-out;
+      width: 120px;
+      background-color: #ddd;
+      list-style: none;
+     margin-right: 90px; 
+     text-align: center;
+     border-style: solid;
+     border-color: white;
+  }
+  
+  @keyframes fadeIn {
+      from {
+          opacity: 0;
+          transform: translateY(-10px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+  #ul ul{
+      display: flex;
+      flex-direction: column;
+      margin-top: 75px;
+      margin-right: -10px;
+       
+  }
+  #ul a{
+      color: black;
+     font-family: Georgia, 'Times New Roman', Times, serif;
+     font-weight: lighter;
+     text-decoration: none;
+  }
+  .secondheader{
+      background-color: lavender;
+      height: 40px;
+      width: 100%;
+  }
+  .secondheader ul{
+      margin: auto;
+      color: white;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 40px;
+      width: 30%;
+      margin-left: 140px;
+  }
+  .secondheader ul li{
+      list-style: none; 
+  }
+  .secondheader ul li a{
+      color: white;
+      text-decoration: none;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  .secondheader ul li a:hover{
+      color: black; 
+  }
+
+  #search img{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 9.3%;
+}
+    .wrapper {
+      width: 95%;
+      margin: 0 auto;
+    }
+    #search-container {
+      margin: 1em 0;
+    }
+    #search-container input {
+      background-color: transparent;
+      width: 40%;
+      border-bottom: 2px solid orange;
+      padding: 1em 0.3em;
+    }
+    #search-container input:focus {
+      border-bottom-color: orange;
+    }
+    #search-container button {
+      padding: 1em 2em;
+      margin-left: 1em;
+      background-color: orange;
+      color: #ffffff;
+      border-radius: 5px;
+      margin-top: 0.5em;
+    }
+    .button-value {
+      border: 2px solid orange;
+      padding: 1em 2.2em;
+      border-radius: 3em;
+      background-color: transparent;
+      color: orange;
+      cursor: pointer;
+    }
+    .active {
+      background-color: orange;
+      color: #ffffff;
+    }
+    #products {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-column-gap: 1.5em;
+      padding: 2em 0;
+    }
+    .card {
+      background-color: #ffffff;
+      max-width: 18em;
+      margin-top: 1em;
+      padding: 1em;
+      border-radius: 5px;
+      box-shadow: 1em 2em 2.5em rgba(1, 2, 68, 0.08);
+    }
+    .image-container {
+      text-align: center;
+    }
+    img {
+      max-width: 100%;
+      object-fit: contain;
+      height: 15em;
+    }
+    .container {
+      padding-top: 1em;
+      color: #110f29;
+    }
+    .container h5 {
+      font-weight: 500;
+    }
+    .hide {
+      display: none;
+    }
+    
+.container4{
+  width: 100%;
+  max-height: 400px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: lavender;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container4 .icons img{
+  width: 25px;
+  height: 25px;
+  border-radius: 10px;
+  margin: 0 5px;
+  margin-bottom: 100px;
+  margin-top: 10px;
+  opacity: 20%;
+}
+.container4 .icons img:hover{
+  opacity: 100%;
+}
+.container4 .address,
+.container4 .list{
+  text-align: center;
+  
+}
+.list li{
+  list-style: none;
+  margin: 25px;
+}
+.container4 a{
+  text-decoration: none;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.footer{
+  width: 100%;
+  height: 60px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(25, 25, 54);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+    @media screen and (max-width: 720px) {
+      img {
+        max-width: 100%;
+        object-fit: contain;
+        height: 10em;
+      }
+      .card {
+        max-width: 10em;
+        margin-top: 1em;
+      }
+      #products {
+        grid-template-columns: auto auto;
+        grid-column-gap: 1em;
+      }
+    }
+  </style>
+  <body>
+    <header>
+      <div class="headerbox">
+      <div class="box1">
+          <h1>MH STORE</h1>
+      </div>
+      <div class="box2">
+          <p>20% off till 29 june 2024!</p>
+      </div>
+<div class="box3details">
+          <div class="box3">
+              <a href="{{ url_for('login')}}" type="button">
+               <div class="box3icon"> </div>
+               <div class="box3text">Sign in or Create account</div>
+               </a>
+          </div>
+          <div class="box4">
+              <a href="{{ url_for('shopping_cart')}}" type="button">
+                  <div class="box4icon" ></div>
+                  <div class="box3text">Shopping cart</div>
+                  </a>
+          </div>
+          </div>
+       </header>
+       <div class="container2">
+        <div class="secondheader">
+         <ul>
+           <li><a href="{{url_for('men')}}" type="button"  >Men</a></li>
+           <li><a href="{{url_for('women')}}" type="button">Women</a></li>
+           <li> <label id="search"><a class="dropdown" href="#" type="button">Overall items</a>
+             <img src="{{ url_for('static', filename='dropdown2.png') }} ">
+             <div id="ul">
+                 <ul>
+                    <a href="#" type="button"> <li class="animals">Shoes</li></a>
+                    <a href="#" type="button"><li class="animals">Dresses</li></a>
+                    <a href="#" type="button" ><li class="animals">Men Collection</li></a>
+                     <a href="#" type="button"><li class="animals">Women Collection</li></a>
+                     <a href="#" type="button"><li class="animals">Men sales</li></a>  
+                 </ul>
+                 </div>
+                 </label>
+         </li>
+           <li><a href="#" type="button">About us</a></li>
+         </ul>
+        </div>
+    <div class="wrapper">
+      <div id="search-container">
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Search product name here.."
+        />
+        <button id="search">Search</button>
+      </div>
+      <div id="buttons">
+        <button class="button-value" onclick="filterProduct('all')">All</button>
+        <button class="button-value" onclick="filterProduct('Topwear')">
+          Topwear
+        </button>
+        <button class="button-value" onclick="filterProduct('Bottomwear')">
+          Bottomwear
+        </button>
+        <button class="button-value" onclick="filterProduct('Jacket')">
+          Jacket
+        </button>
+        <button class="button-value" onclick="filterProduct('Watch')">
+          Watch
+        </button>
+      </div>
+      <div id="products"></div>
+    </div>
+
+    
+<div class="container4">
+  <div class="list">
+      <ul>
+         <li><h3>Useful links</h3></li>
+       <li><a href=""> Rent Collection </a></li>
+        <li><a href="">Accounting</a></li>
+<li><a href="">Agreements</a></li>
+<li><a href="">  Rental Application</a></li>
+
+      </ul>
+   </div>
+   <div class="list">
+      <ul>
+         <li><h3>Useful links</h3></li>
+       <li><a href=""> Rent Collection </a></li>
+        <li><a href="">Accounting</a></li>
+<li><a href="">Agreements</a></li>
+<li><a href="">  Rental Application</a></li>
+
+      </ul>
+   </div>
+   <div class="list">
+   <div class="address">
+      <h3>Address</h3>
+<p>Narwala chowk FSD <br>
+  near to GCUF</p>
+   </div>
+   <div class="icons">
+      <a href="" type="button" class="button5">  <img src="{{ url_for('static', filename='facebook.png') }}"></a> 
+               <a href="https://www.instagram.com/mustafahassan065?igsh=YWZyMHVoaHg5dXhx" type="button" class="button5"><img src="{{ url_for('static', filename='instagram_icon.png.webp') }}  "></a>
+              <a href="https://www.linkedin.com/in/mustafa-hassan-78b0262b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" type="button" class="button5">  <img src="{{ url_for('static', filename='linkedin.png') }}  "></a>
+                  <a href="https://github.com/mustafahassan065" type="button" class="button5"> <img src="{{ url_for('static', filename='git.png') }}  "></a>
+   </div>
+   </div>
+</div>
+<div class="footer">
+  <p>Copyright MH store.All Rights Reserved</p>
+  <p>Designed by:Mustafa hassan</p>
+</div>
+    <script>
+      let products = {
+        data: [
+          {
+            productName: "Regular White T-Shirt",
+            category: "Topwear",
+            price: "30",
+            image: "{{ url_for('static', filename='p1.jpeg') }}",
+          },
+          {
+            productName: "Beige Short Skirt",
+            category: "Bottomwear",
+            price: "49",
+            image: "{{ url_for('static', filename='p19.jpg') }}",
+          },
+          {
+            productName: "Sporty SmartWatch",
+            category: "Watch",
+            price: "99",
+            image: "{{ url_for('static', filename='p9.jpg') }}",
+          },
+          {
+            productName: "Basic Knitted Top",
+            category: "Topwear",
+            price: "29",
+            image: "{{ url_for('static', filename='p4.jpg') }}",
+          },
+          {
+            productName: "Black Leather Jacket",
+            category: "Jacket",
+            price: "129",
+            image: "{{ url_for('static', filename='p17.jpeg') }}",
+          },
+          {
+            productName: "Stylish Pink Trousers",
+            category: "Bottomwear",
+            price: "89",
+            image: "{{ url_for('static', filename='p6.jpg') }}",
+          },
+          {
+            productName: "Brown Men's Jacket",
+            category: "Jacket",
+            price: "189",
+            image: "{{ url_for('static', filename='p18.jpg') }}",
+          },
+          {
+            productName: "Comfy Gray Pants",
+            category: "Bottomwear",
+            price: "49",
+            image: "{{ url_for('static', filename='p8.jpg') }}",
+          },
+        ],
+      };
+
+      // Function to create the product card
+      function createProductCard(product) {
+        // Create Card
+        let card = document.createElement("div");
+        card.classList.add("card", product.category, "hide");
+
+        // Image div
+        let imgContainer = document.createElement("div");
+        imgContainer.classList.add("image-container");
+
+        // img tag
+        let image = document.createElement("img");
+        image.setAttribute("src", product.image);
+        imgContainer.appendChild(image);
+        card.appendChild(imgContainer);
+
+        // Container
+        let container = document.createElement("div");
+        container.classList.add("container");
+
+        // Product name
+        let name = document.createElement("h5");
+        name.classList.add("product-name");
+        name.innerText = product.productName.toUpperCase();
+        container.appendChild(name);
+
+        // Price
+        let price = document.createElement("h6");
+        price.innerText = "$" + product.price;
+        container.appendChild(price);
+
+        // Add to Cart Form
+        let form = document.createElement("form");
+        form.setAttribute("action", "{{ url_for('add_to_cart') }}");
+        form.setAttribute("method", "post");
+
+        let inputName = document.createElement("input");
+        inputName.setAttribute("type", "hidden");
+        inputName.setAttribute("name", "product_name");
+        inputName.setAttribute("value", product.productName);
+        form.appendChild(inputName);
+
+        let inputPrice = document.createElement("input");
+        inputPrice.setAttribute("type", "hidden");
+        inputPrice.setAttribute("name", "product_price");
+        inputPrice.setAttribute("value", product.price);
+        form.appendChild(inputPrice);
+
+        let submitButton = document.createElement("button");
+        submitButton.setAttribute("type", "submit");
+        submitButton.innerText = "Add to Cart";
+        form.appendChild(submitButton);
+
+        container.appendChild(form);
+
+        card.appendChild(container);
+        document.getElementById("products").appendChild(card);
+      }
+
+      // Loop through each product and create the card
+      products.data.forEach(createProductCard);
+
+      // Filter products
+      function filterProduct(value) {
+        let buttons = document.querySelectorAll(".button-value");
+        buttons.forEach((button) => {
+          if (value.toUpperCase() == button.innerText.toUpperCase()) {
+            button.classList.add("active");
+          } else {
+            button.classList.remove("active");
+          }
+        });
+
+        let elements = document.querySelectorAll(".card");
+        elements.forEach((element) => {
+          if (value == "all") {
+            element.classList.remove("hide");
+          } else {
+            if (element.classList.contains(value)) {
+              element.classList.remove("hide");
+            } else {
+              element.classList.add("hide");
+            }
+          }
+        });
+      }
+
+      // Initially display all products
+      window.onload = () => {
+        filterProduct("all");
+      };
+
+    </script>
+  </body>
+</html>
